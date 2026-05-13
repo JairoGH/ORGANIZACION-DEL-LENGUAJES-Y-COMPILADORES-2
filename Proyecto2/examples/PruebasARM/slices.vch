@@ -1,0 +1,258 @@
+fn main() {
+    mut puntos int = 0
+
+    print("=== Pruebas con slices en VLangCherry ===")
+
+    // 1. Creación de slices (2 puntos)
+    print("==== Creación de slices ====")
+    mut puntosCreacion int = 0
+
+    print("Creación con literales:")
+    edades = []int{18, 25, 30, 40}
+    print("###Validación Manual")
+    print("edades:", edades)
+    print("OK Creación con literales: correcto")
+    puntosCreacion = puntosCreacion + 2
+
+    // 2. Acceso de Elementos (2 puntos)
+    print("\n==== Acceso de Elementos ====")
+    mut puntosAcceso int = 0
+
+    print("Acceso por índice:")
+    mut segundaEdad := edades[1]
+    print("Segunda edad:", segundaEdad)
+
+    if (segundaEdad == 25) {
+        puntosAcceso = puntosAcceso + 2
+        print("OK Acceso por índice: correcto")
+    } else {
+        print("X Acceso por índice: incorrecto")
+    }
+
+    print("\nModificación de elementos:")
+    edades[1] = 26
+    print("edades después de modificar:", edades)
+
+    if (edades[1] == 26) {
+        print("OK Modificación de elementos: correcto")
+    } else {
+        print("X Modificación de elementos: incorrecto")
+    }
+
+    // 3. Función indexOf (1 punto)
+    print("\n==== Función indexOf ====")
+    mut puntosIndex int = 0
+
+    print("Búsqueda de elementos con indexOf:")
+    valores = []int{100, 200, 300, 400}
+    mut idx1 := indexOf(valores, 300)
+    mut idx2 := indexOf(valores, 500) // No existe, debería retornar -1
+    print("Índice de 300:", idx1)
+    print("Índice de 500:", idx2)
+
+    if (idx1 == 2 && idx2 == -1) {
+        puntosIndex = puntosIndex + 1
+        print("OK indexOf: correcto")
+    } else {
+        print("X indexOf: incorrecto")
+    }
+
+    // 4. Función join (1 punto)
+    print("\n==== Función join ====")
+    mut puntosJoin int = 0
+
+    print("Unión de strings con join:")
+    ciudades = []string{"Guatemala", "Antigua", "Quetzaltenango"}
+    mut listado := join(ciudades, " - ")
+    mut listadoComa := join(ciudades, ", ")
+    print("Listado con guión:", listado)
+    print("Listado con comas:", listadoComa)
+
+    if (listado == "Guatemala - Antigua - Quetzaltenango" && listadoComa == "Guatemala, Antigua, Quetzaltenango") {
+        puntosJoin = puntosJoin + 1
+        print("OK join: correcto")
+    } else {
+        print("X join: incorrecto")
+    }
+
+    // 5. Función len (3 puntos)
+    print("\n==== Función len ====")
+    mut puntosLen int = 0
+
+    print("Longitud de slices con len:")
+    mut lenEdades := len(edades)
+    mut lenCiudades := len(ciudades)
+    print("Longitud de edades:", lenEdades)
+    print("Longitud de ciudades:", lenCiudades)
+
+    if (lenEdades == 4 && lenCiudades == 3) {
+        puntosLen = puntosLen + 3
+        print("OK len: correcto")
+    } else {
+        print("X len: incorrecto")
+    }
+
+    // 6. Función append (2 puntos)
+    print("\n==== Función append ====")
+    mut puntosAppend int = 0
+
+    print("Agregar elementos con append:")
+    notas = []int{80, 85}
+    notas = append(notas, 90)
+    print("notas después de append:", notas)
+
+    if (len(notas) == 3 && notas[2] == 90) {
+        puntosAppend = puntosAppend + 2
+        print("OK Agregar un elemento: correcto")
+    } else {
+        print("X Agregar un elemento: incorrecto")
+    }
+
+    // Resumen de puntos
+    puntos = puntosCreacion + puntosAcceso + puntosIndex + puntosJoin +
+        puntosLen + puntosAppend
+
+    print("\n=== Tabla de Resultados ===")
+    print("+----------------------------------+--------+-------+")
+    print("| Característica                   | Puntos | Total |")
+    print("+----------------------------------+--------+-------+")
+    print("| Creación de slices               | ", puntosCreacion, "    | 2     |")
+    print("| Acceso de Elementos              | ", puntosAcceso, "    | 2     |")
+    print("| Función indexOf                  | ", puntosIndex, "    | 1     |")
+    print("| Función join                     | ", puntosJoin, "    | 1     |")
+    print("| Función len                      | ", puntosLen, "    | 3     |")
+    print("| Función append                   | ", puntosAppend, "    | 2     |")
+    print("+----------------------------------+--------+-------+")
+    print("| TOTAL                            | ", puntos, "   | 11    |")
+    print("+----------------------------------+--------+-------+")
+}
+
+
+fn main() {
+    mut puntos int = 0
+
+    print("=== Archivo de pruebas de slices (Ejemplo 2) ===")
+
+    // 1. Creación de slices (2 puntos)
+    print("==== Creación de slices ====")
+    mut puntosCreacion int = 0
+
+    print("Creación con literales:")
+    temperaturas = []int{22, 24, 19, 30}
+    print("###Validación Manual")
+    print("temperaturas:", temperaturas)
+    print("OK Creación con literales: correcto")
+    puntosCreacion = puntosCreacion + 2
+
+    // 2. Acceso de Elementos (2 puntos)
+    print("\n==== Acceso de Elementos ====")
+    mut puntosAcceso int = 0
+
+    print("Acceso por índice:")
+    mut ultimaTemp := temperaturas[3]
+    print("Última temperatura:", ultimaTemp)
+
+    if (ultimaTemp == 30) {
+        puntosAcceso = puntosAcceso + 2
+        print("OK Acceso por índice: correcto")
+    } else {
+        print("X Acceso por índice: incorrecto")
+    }
+
+    print("\nModificación de elementos:")
+    temperaturas[2] = 21
+    print("temperaturas después de modificar:", temperaturas)
+
+    if (temperaturas[2] == 21) {
+        print("OK Modificación de elementos: correcto")
+    } else {
+        print("X Modificación de elementos: incorrecto")
+    }
+
+    // 3. Función indexOf (1 punto)
+    print("\n==== Función indexOf ====")
+    mut puntosIndex int = 0
+
+    print("Búsqueda de elementos con indexOf:")
+    codigos = []int{101, 102, 103, 104}
+    mut pos1 := indexOf(codigos, 103)
+    mut pos2 := indexOf(codigos, 999)
+    print("Índice de 103:", pos1)
+    print("Índice de 999:", pos2)
+
+    if (pos1 == 2 && pos2 == -1) {
+        puntosIndex = puntosIndex + 1
+        print("OK indexOf: correcto")
+    } else {
+        print("X indexOf: incorrecto")
+    }
+
+    // 4. Función join (1 punto)
+    print("\n==== Función join ====")
+    mut puntosJoin int = 0
+
+    print("Unión de strings con join:")
+    frutas = []string{"Manzana", "Banana", "Mango"}
+    mut lista1 := join(frutas, " + ")
+    mut lista2 := join(frutas, " | ")
+    print("Lista con +:", lista1)
+    print("Lista con |:", lista2)
+
+    if (lista1 == "Manzana + Banana + Mango" && lista2 == "Manzana | Banana | Mango") {
+        puntosJoin = puntosJoin + 1
+        print("OK join: correcto")
+    } else {
+        print("X join: incorrecto")
+    }
+
+    // 5. Función len (3 puntos)
+    print("\n==== Función len ====")
+    mut puntosLen int = 0
+
+    print("Longitud de slices con len:")
+    mut tamFrutas := len(frutas)
+    mut tamCodigos := len(codigos)
+    print("Longitud de frutas:", tamFrutas)
+    print("Longitud de codigos:", tamCodigos)
+
+    if (tamFrutas == 3 && tamCodigos == 4) {
+        puntosLen = puntosLen + 3
+        print("OK len: correcto")
+    } else {
+        print("X len: incorrecto")
+    }
+
+    // 6. Función append (2 puntos)
+    print("\n==== Función append ====")
+    mut puntosAppend int = 0
+
+    print("Agregar elementos con append:")
+    nombres = []string{"Ana", "Luis"}
+    nombres = append(nombres, "Carlos")
+    print("nombres después de append:", nombres)
+
+    if (len(nombres) == 3 && nombres[2] == "Carlos") {
+        puntosAppend = puntosAppend + 2
+        print("OK append: correcto")
+    } else {
+        print("X append: incorrecto")
+    }
+
+    // Resumen de puntos
+    puntos = puntosCreacion + puntosAcceso + puntosIndex + puntosJoin +
+        puntosLen + puntosAppend
+
+    print("\n=== Tabla de Resultados ===")
+    print("+----------------------------------+--------+-------+")
+    print("| Característica                   | Puntos | Total |")
+    print("+----------------------------------+--------+-------+")
+    print("| Creación de slices               | ", puntosCreacion, "    | 2     |")
+    print("| Acceso de Elementos              | ", puntosAcceso, "    | 2     |")
+    print("| Función indexOf                  | ", puntosIndex, "    | 1     |")
+    print("| Función join                     | ", puntosJoin, "    | 1     |")
+    print("| Función len                      | ", puntosLen, "    | 3     |")
+    print("| Función append                   | ", puntosAppend, "    | 2     |")
+    print("+----------------------------------+--------+-------+")
+    print("| TOTAL                            | ", puntos, "   | 11    |")
+    print("+----------------------------------+--------+-------+")
+}

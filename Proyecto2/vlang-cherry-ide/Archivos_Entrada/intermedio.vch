@@ -1,0 +1,79 @@
+fn saludar() {
+	println("¡Hola, mundo!")
+}
+
+fn obtener_numero() int {
+	return 42
+}
+
+fn sumar(a int, b int) int {
+	return a + b
+}
+
+fn saludarPersona(nombre string) {
+	println("¡Hola,", nombre,"!")
+}
+
+fn main() {
+	mut puntos := 0
+	println("=== Prueba de funciones simplificada ===")
+
+	// 1. Funciones sin parámetros
+	mut puntos_simples := 0
+	saludar()
+	numero := obtener_numero()
+	println("Número obtenido:", numero)
+	if numero == 42 {
+		println("OK obtener_numero")
+		puntos_simples += 1
+	}
+
+	// 2. Funciones con parámetros
+	mut puntos_param := 0
+	saludarPersona("Juan")
+    resultado := sumar(10, 20)
+    println("Resultado de suma:", resultado)
+	if resultado == 30 {
+		println("OK suma")
+		puntos_param += 1
+	}
+
+	// 3. Simulación de Atoi
+	mut puntos_atoi := 0
+	val := atoi("123")
+	println(" 123 convertido a int:", val)
+	if val == 123 {
+		println("OK atoi")
+		puntos_atoi += 1
+	}
+
+	// 4. Simulación de ParseFloat
+	mut puntos_parse := 0
+	val1 := parseFloat("123.45")
+	val2 := parseFloat("123")
+	println("parseFloat('123.45') =", val1)
+	println("parseFloat('123') =", val2)
+	if val1 == 123.45 {
+		puntos_parse += 1
+		println("OK parseFloat 123.45")
+	}
+	if val2 == 123.0 {
+		puntos_parse += 1
+		println("OK parseFloat 123")
+	}
+
+	// Total
+	puntos = puntos_simples + puntos_param + puntos_atoi + puntos_parse
+
+	// === TABLA DE RESULTADOS ===
+    print("|═════════ Tabla de Resultados ════════|══════|══════|")
+    print("| Característica                       |Puntos| Total|")
+    print("|══════════════════════════════════════|══════|══════|")
+    print("| Funciones sin parámetros             |", puntos_simples, "   |  1   |")
+    print("| Funciones con parámetros             |", puntos_param, "   |  1   |")
+    print("| Función Atoi                         |", puntos_atoi, "   |  1   |")
+    print("| Función ParseFloat                   |", puntos_parse, "   |  2   |")
+    print("|══════════════════════════════════════|══════|══════|")
+    print("| TOTAL PUNTOS OBTENIDOS               |", puntos, "   |  5   |")
+    print("|══════════════════════════════════════|══════|══════|")
+}

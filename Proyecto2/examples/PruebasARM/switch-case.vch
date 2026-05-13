@@ -1,0 +1,446 @@
+fn main() {
+    println("=========== Sentencia Switch - Case =============")
+    println("=========== EJEMPLO 1: CALCULADORA BÁSICA =============")
+    operacion := "+"
+    a := 10
+    b := 5
+    
+    switch operacion {
+    case "+":
+        resultado := a + b
+        println("Suma:")
+        println(resultado)        // ESPERADO: 15
+    case "-":
+        resultado := a - b
+        println("Resta:")
+        println(resultado)
+    case "*":
+        resultado := a * b
+        println("Multiplicación:")
+        println(resultado)
+    case "/":
+        resultado := a / b
+        println("División:")
+        println(resultado)
+    default:
+        println("Operación no válida")
+    }
+    // SALIDA ESPERADA:
+    // =========== EJEMPLO 1: CALCULADORA BÁSICA =============
+    // Suma:
+    // 15
+
+    println("=========== EJEMPLO 2: DÍAS DE LA SEMANA =============")
+    dia_numero := 6
+    
+    switch dia_numero {
+    case 1:
+        println("Lunes - Inicio de semana laboral")
+    case 2:
+        println("Martes - Día productivo")
+    case 3:
+        println("Miércoles - Mitad de semana")          
+    case 4:
+        println("Jueves - Casi fin de semana")
+    case 5:
+        println("Viernes - ¡Por fin!")
+    case 6:
+        println("Sábado - Día de descanso")
+    case 7:
+        println("Domingo - Día familiar")
+    default:
+        println("Día inválido")
+    }
+    // SALIDA ESPERADA:
+    // =========== EJEMPLO 2: DÍAS DE LA SEMANA =============
+    // Miércoles - Mitad de semana
+
+    println("=========== EJEMPLO 3: CALIFICACIONES =============")
+    letra_calificacion := "D"
+    
+    switch letra_calificacion {
+    case "A":
+        println("Excelente - 90-100 puntos")            
+        println("¡Felicitaciones!")                     
+    case "B":
+        println("Muy bien - 80-89 puntos")
+        println("Buen trabajo")
+    case "C":
+        println("Regular - 70-79 puntos")
+        println("Puedes mejorar")
+    case "D":
+        println("Necesita mejora - 60-69 puntos")
+        println("Estudia más")
+    case "F":
+        println("Reprobado - Menos de 60 puntos")
+        println("Necesitas estudiar mucho más")
+    default:
+        println("Calificación no válida")
+    }
+    // SALIDA ESPERADA:
+    // =========== EJEMPLO 3: CALIFICACIONES =============
+    // Excelente - 90-100 puntos
+    // ¡Felicitaciones!
+
+    println("=========== EJEMPLO 4: ESTADO DE SISTEMA =============")
+    sistema_activo := true
+    modo_debug := false
+    
+    switch sistema_activo {
+    case true:
+        println("Sistema ACTIVO")                       
+        switch modo_debug {
+        case true:
+            println("Modo DEBUG habilitado")
+        case false:
+            println("Modo PRODUCCIÓN")                  
+        }
+    case false:
+        println("Sistema INACTIVO")
+        println("Iniciando secuencia de arranque...")
+    }
+    // SALIDA ESPERADA:
+    // =========== EJEMPLO 4: ESTADO DE SISTEMA =============
+    // Sistema ACTIVO
+    // Modo PRODUCCIÓN
+
+    println("=========== EJEMPLO 5: MENÚ DE OPCIONES =============")
+    opcion := "configuracion"
+    
+    switch opcion {
+    case "inicio":
+        println("=== PANTALLA PRINCIPAL ===")
+        println("Bienvenido al sistema")
+    case "perfil":
+        println("=== PERFIL DE USUARIO ===")
+        println("Nombre: Juan Pérez")
+        println("Email: juan@email.com")
+    case "configuracion":
+        println("=== CONFIGURACIÓN ===")                
+        println("1. Cambiar idioma")                    
+        println("2. Configurar notificaciones")         
+        println("3. Privacidad")                        
+    case "ayuda":
+        println("=== CENTRO DE AYUDA ===")
+        println("¿En qué podemos ayudarte?")
+    case "salir":
+        println("=== CERRANDO SESIÓN ===")
+        println("¡Hasta luego!")
+    default:
+        println("Opción no reconocida")
+        println("Usa: inicio, perfil, configuracion, ayuda, salir")
+    }
+    // SALIDA ESPERADA:
+    // =========== EJEMPLO 5: MENÚ DE OPCIONES =============
+    // === CONFIGURACIÓN ===
+    // 1. Cambiar idioma
+    // 2. Configurar notificaciones
+    // 3. Privacidad
+
+    println("=========== EJEMPLO 6: TIPOS DE ARCHIVOS =============")
+    extension := "pdf"
+    
+    switch extension {
+    case "txt":
+        println("Archivo de texto plano")
+        println("Editor: Bloc de notas")
+    case "doc":
+        println("Documento de Word")
+        println("Editor: Microsoft Word")
+    case "pdf":
+        println("Documento PDF")                        
+        println("Visor: Adobe Reader")                  
+    case "jpg":
+        println("Imagen JPEG")
+        println("Visor: Galería de fotos")
+    case "png":
+        println("Imagen PNG")
+        println("Visor: Galería de fotos")
+    case "mp3":
+        println("Archivo de audio")
+        println("Reproductor: Reproductor de música")
+    case "mp4":
+        println("Archivo de video")
+        println("Reproductor: Reproductor de video")
+    default:
+        println("Tipo de archivo no reconocido")
+        println("Abrir con aplicación predeterminada")
+    }
+    // SALIDA ESPERADA:
+    // =========== EJEMPLO 6: TIPOS DE ARCHIVOS =============
+    // Documento PDF
+    // Visor: Adobe Reader
+
+    println("=========== EJEMPLO 7: NIVELES DE JUEGO =============")
+    nivel := 1
+    puntos := 0
+    
+    switch nivel {
+    case 1:
+        println("NIVEL 1: Tutorial")                    
+        println("Aprendiendo los controles básicos")   
+        puntos = 100                                    // ESPERADO: puntos = 100
+    case 2:
+        println("NIVEL 2: Principiante")
+        println("Primeros desafíos")
+        puntos = 250
+    case 3:
+        println("NIVEL 3: Intermedio")
+        println("La dificultad aumenta")
+        puntos = 500
+    case 4:
+        println("NIVEL 4: Avanzado")
+        println("Solo para expertos")
+        puntos = 1000
+    case 5:
+        println("NIVEL 5: Maestro")
+        println("El desafío final")
+        puntos = 2000
+    default:
+        println("Nivel no disponible")
+        puntos = 0
+    }
+    println("Puntos obtenidos:")                        
+    println(puntos)                                     // ESPERADO: 100
+    // SALIDA ESPERADA:
+    // =========== EJEMPLO 7: NIVELES DE JUEGO =============
+    // NIVEL 1: Tutorial
+    // Aprendiendo los controles básicos
+    // Puntos obtenidos:
+    // 100
+
+    println("=========== EJEMPLO 8: CÓDIGOS DE ERROR =============")
+    codigo_error := 404
+    
+    switch codigo_error {
+    case 200:
+        println("OK - Solicitud exitosa")
+    case 400:
+        println("Bad Request - Solicitud incorrecta")
+    case 401:
+        println("Unauthorized - No autorizado")
+    case 403:
+        println("Forbidden - Acceso prohibido")
+    case 404:
+        println("Not Found - Recurso no encontrado")    
+        println("Verifica la URL")                      
+    case 500:
+        println("Internal Server Error - Error del servidor")
+        println("Contacta al administrador")
+    case 503:
+        println("Service Unavailable - Servicio no disponible")
+        println("Intenta más tarde")
+    default:
+        println("Código de error desconocido")
+        println(codigo_error)
+    }
+    // SALIDA ESPERADA:
+    // =========== EJEMPLO 8: CÓDIGOS DE ERROR =============
+    // Not Found - Recurso no encontrado
+    // Verifica la URL
+
+    println("=========== EJEMPLO 9: COMANDOS DE TERMINAL =============")
+    comando := "ls"
+    
+    switch comando {
+    case "ls":
+        println("Listando archivos del directorio:")    
+        println("archivo1.txt")                         
+        println("archivo2.pdf")                         
+        println("carpeta1/")                            
+    case "pwd":
+        println("Directorio actual:")
+        println("/home/usuario/documentos")
+    case "cd":
+        println("Cambiar directorio")
+        println("Uso: cd <directorio>")
+    case "mkdir":
+        println("Crear directorio")
+        println("Uso: mkdir <nombre>")
+    case "rm":
+        println("Eliminar archivo")
+        println("¡CUIDADO! Esta acción es irreversible")
+    case "help":
+        println("Comandos disponibles:")
+        println("ls, pwd, cd, mkdir, rm, help, exit")
+    case "exit":
+        println("Cerrando terminal...")
+    default:
+        println("Comando no reconocido")
+        println("Escribe 'help' para ver comandos disponibles")
+    }
+    // SALIDA ESPERADA:
+    // =========== EJEMPLO 9: COMANDOS DE TERMINAL =============
+    // Listando archivos del directorio:
+    // archivo1.txt
+    // archivo2.pdf
+    // carpeta1/
+
+    println("=========== EJEMPLO 10: SIN DEFAULT =============")
+    color := "verde"
+    
+    switch color {
+    case "rojo":
+        println("Color cálido y energético")
+    case "azul":
+        println("Color frío y tranquilo")
+    case "amarillo":
+        println("Color brillante y alegre")
+    case "verde":
+        println("Color de la naturaleza")               
+    case "negro":
+        println("Ausencia de color")
+    case "blanco":
+        println("Presencia de todos los colores")
+    }
+    println("Análisis de color completado")             
+    // SALIDA ESPERADA:
+    // =========== EJEMPLO 10: SIN DEFAULT =============
+    // Color de la naturaleza
+    // Análisis de color completado
+
+    println("=========== EJEMPLO 11: SWITCH CON VARIABLES =============")
+    edad := 25
+    categoria := ""
+    
+    switch edad {
+    case 0:
+        categoria = "Recién nacido"
+    case 1:
+        categoria = "Bebé"
+    case 2:
+        categoria = "Niño pequeño"
+    case 13:
+        categoria = "Adolescente"
+    case 18:
+        categoria = "Joven adulto"
+    case 25:
+        categoria = "Adulto"                            // ESPERADO: categoria = "Adulto"
+        println("En la flor de la vida")               
+    case 65:
+        categoria = "Adulto mayor"
+    default:
+        categoria = "Edad no categorizada"
+    }
+    
+    println("Categoría de edad:")                       
+    println(categoria)                                  // ESPERADO: "Adulto"
+    // SALIDA ESPERADA:
+    // =========== EJEMPLO 11: SWITCH CON VARIABLES =============
+    // En la flor de la vida
+    // Categoría de edad:
+    // Adulto
+
+    println("=========== EJEMPLO 12: SWITCH ANIDADO COMPLEJO =============")
+    tipo_usuario := "admin"
+    permiso := "escribir"
+    
+    switch tipo_usuario {
+    case "admin":
+        println("Usuario ADMINISTRADOR")                
+        switch permiso {
+        case "leer":
+            println("✅ Permiso de lectura concedido")
+        case "escribir":
+            println("✅ Permiso de escritura concedido") 
+        case "eliminar":
+            println("✅ Permiso de eliminación concedido")
+        default:
+            println("❌ Permiso no reconocido")
+        }
+    case "editor":
+        println("Usuario EDITOR")
+        switch permiso {
+        case "leer":
+            println("✅ Permiso de lectura concedido")
+        case "escribir":
+            println("✅ Permiso de escritura concedido")
+        case "eliminar":
+            println("❌ Permiso de eliminación DENEGADO")
+        default:
+            println("❌ Permiso no reconocido")
+        }
+    case "usuario":
+        println("Usuario ESTÁNDAR")
+        switch permiso {
+        case "leer":
+            println("✅ Permiso de lectura concedido")
+        case "escribir":
+            println("❌ Permiso de escritura DENEGADO")
+        case "eliminar":
+            println("❌ Permiso de eliminación DENEGADO")
+        default:
+            println("❌ Permiso no reconocido")
+        }
+    default:
+        println("❌ Tipo de usuario no válido")
+    }
+    // SALIDA ESPERADA:
+    // =========== EJEMPLO 12: SWITCH ANIDADO COMPLEJO =============
+    // Usuario ADMINISTRADOR
+    // ✅ Permiso de escritura concedido
+
+    println("=========== FIN DE EJEMPLOS =============")
+    println("¡Switch-case implementado exitosamente!")
+}
+
+
+// ============================== BREAK ===============================
+
+fn main() {
+
+    // Switch/Case (3 puntos)
+    println("==================== Switch/Case ========================")
+    mut puntosSwitch := 0
+
+    println("================ Switch simple ====================")
+    mut dia := 1
+    switch dia {
+    case 1:
+        println("Lunes")
+        puntosSwitch += 1
+    case 2:
+        println("Martes")
+    case 3:
+        println("Miércoles")
+    case 4:
+        println("Jueves")
+    case 5:
+        println("Viernes")
+    case 6:
+        println("Sábado")
+    case 7:
+        println("Domingo")
+    default:
+        println("Día inválido")
+    }
+
+    println("================ Switch con default ================")
+    mut numero := 100
+    switch numero {
+    case 1:
+        println("No se debería imprimir")
+    case 2:
+        println("No se debería imprimir")
+    default:
+        println("Número no reconocido, se ejecuta default")
+        puntosSwitch += 1
+    }
+
+    println("================ Switch con break explícito ================")
+    mut numeroBreak := 2
+    switch numeroBreak {
+    case 1:
+        println("No se debería imprimir")
+    case 2:
+        println("Caso 2 - Se ejecuta este y debe detenerse")
+        puntosSwitch += 1
+        break
+        println("No debería ejecutarse si el break funciona")
+        puntosSwitch -= 1
+    case 3:
+        println("No se debería imprimir")
+    }
+
+    println("TotalPuntos: ", puntosSwitch)
+}
